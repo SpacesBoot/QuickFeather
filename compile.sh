@@ -12,3 +12,6 @@ clang --target=i386-pc-none-elf -ffreestanding -nostdlib -c input/input.c -o inp
 ld -m elf_i386 -T linker.ld -o silx.bin boot.o kernel.o vga.o emu.o input.o
 
 ls -lh silx.bin
+
+rm -rf iso syslinux-6.03 syslinux.tar.xz
+rm -f *.o
