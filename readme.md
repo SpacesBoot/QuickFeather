@@ -1,5 +1,3 @@
-# SILX
+# QuickFeather
 
-Silx is a simple x86_64 kernel. 
-Its main objective is my learning and later to be a complete lightweight mono kernel  like Alpine Linux but without Linux in between.
-
+QuickFeather is an x86_64 kernel. It's a project I undertook to create my own Linux distribution from scratch and demonstrate my skills...
