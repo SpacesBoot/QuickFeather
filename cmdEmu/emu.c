@@ -13,25 +13,31 @@ void start() {
     char c = getc();
 
     if (c == '\n') {
-      logstr("❯ ");
-      for(int i = 0; i < 32; i++) logc(str[i]);
-      logln();
-      if(str[0] == 'h' && str[1] == 'e' && str[2] == 'l' && str[3] == 'p' && str[4] == '-' && str[5] == '-') {
-        logstr("made by Christiam");
+        logstr("> ");
+        for(int i = 0; i < 32; i++) logc(str[i]);
+        logln();
+        if(str[0] == '-' && str[1] == '-' && str[2] == 'h' && str[3] == 'e' && str[4] == 'l' && str[5] == 'p') {
+          logstr("--help = help with basic commands");
+          logln();
+          logstr("--version = kernel version, system, etc.");
+          logln();
+        } else if (str[0] == '-' && str[1] == '-' && str[2] == 'v' && str[3] == 'e' && str[4] == 'r' && str[5] == 's' && str[6] == 'i' && str[7] == 'o' && str[8] == 'n'){
+          logstr("kernel: 26.7 3:15");
+          logln();
+        } else {
+          logstr("'");
+          for(int i = 0;i<32;i++) logc(str[i]);
+          logstr("' was no recognized");
+        }
+        logln();
+        crrPos = -1;
+        for(int i = 0;i<32;i++) str[i] = '\0';
+      } else if( c == '\b') {
+        str[crrPos-1] == '\0';
+        crrPos--;
       } else {
-        logstr("'");
-        for(int i = 0;i<32;i++) logc(str[i]);
-        logstr("' was no recognized");
+        str[crrPos] = c;
       }
-      logln();
-      crrPos = -1;
-      for(int i = 0;i<32;i++) str[i] = '\0';
-    } else if( c == '\b') {
-      str[crrPos-1] == '\0';
-      crrPos--;
-    } else {
-      str[crrPos] = c;
-    }
     crrPos++;
   }
 }
