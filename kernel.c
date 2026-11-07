@@ -13,4 +13,5 @@ void outb(unsigned short port, unsigned char val) {
 
 void kernel_main(void) {
         start();
+
 }
